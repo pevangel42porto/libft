@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/09 12:47:20 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/09 13:43:08 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*str;
 
-	i = 0;
-	while (i < n)
+	str = (char *)s;
+	while (*str != c)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		if (*str == '\0')
+		{
+			return (NULL);
+		}
+		str++;
 	}
-	return (s);
+	return (str);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	char example[] = "Ola bem vindo ao mundo 42";
+	int search = '4';
 
-	printf("%p", ft_memset(example, 'A', 10));
+	printf("%s", ft_strchr(example, search));
 }*/

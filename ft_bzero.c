@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:56:10 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 11:30:40 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:15:13 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t  i;
+	char	*p;
 
-	i = 0;
-	while(i < n)
+	p = s;
+	while (n--)
 	{
-		((unsigned char *)s)[i] = 0;
-		i++;
+		*p++ = 0;
 	}
 }
-
+/*
 int	main()
 {
 	char example[] = "Ola bem vindo ao mundo 42!";
+	ft_bzero(&example, sizeof(example));
 
-	printf("%d", ft_bzero(example, 2));
-}
+	printf("%s", example);
+}*/

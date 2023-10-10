@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/09 14:12:05 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/09 14:33:02 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*str;
 
-	i = 0;
-	while (i < n)
+	str = (unsigned char *)s;
+	while (n--)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		if (*str == c)
+			return (str);
+		str++;
 	}
-	return (s);
+	return (NULL);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
-
-	printf("%p", ft_memset(example, 'A', 10));
+	const char example[] = "Ola bem vindo ao mundo 42!";
+	int c = 'a';
+	printf("%p", ft_memchr(example, c, 22));
 }*/

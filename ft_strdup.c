@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/10 16:29:15 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/10 16:31:07 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strdup(char *src)
 {
-	size_t	i;
+	char	*temp;
+	int	i;
 
+	temp = (char *) malloc(ft_strlen(src) + 1 * sizeof(char));
 	i = 0;
-	while (i < n)
+	while (str[i] != '\0')
 	{
-		((unsigned char *)s)[i] = c;
+		temp[i] = str[i];
 		i++;
 	}
-	return (s);
+	temp[i] = '\0';
+	return (temp);
 }
-/*
-int	main()
-{
-	char	example[] = "Bem vindo ao mundo 42!";
-
-	printf("%p", ft_memset(example, 'A', 10));
-}*/

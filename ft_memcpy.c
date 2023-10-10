@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/06 13:12:35 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/06 15:43:11 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char		*p_dest;
+	const unsigned char	*p_src;
 
-	i = 0;
-	while (i < n)
+	p_dest = dest;
+	p_src = src;
+	while (n--)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		*p_dest++ = *p_src++;
 	}
-	return (s);
+	return (dest);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	char dest[] = "Ola bem vindo";
+	char src[] = "ao mundo 42!";
 
-	printf("%p", ft_memset(example, 'A', 10));
+	ft_memcpy(dest, src, sizeof(src));
+	printf("%s", dest);
 }*/

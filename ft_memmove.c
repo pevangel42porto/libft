@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/06 15:24:18 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/06 16:05:42 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char		*p_dest;
+	const unsigned char	*p_src;
 
-	i = 0;
-	while (i < n)
+	p_dest = dest;
+	p_src = src;
+	if (p_dest > p_src && p_dest < p_src + n)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		while (n--)
+			*p_dest-- = *p_src--;
 	}
-	return (s);
+	else
+		while (n--)
+			*p_dest++ = *p_src++;
+	return (dest);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	char dest[] = "Hello";
+	char src[] = "World";
 
-	printf("%p", ft_memset(example, 'A', 10));
+	printf("%s", (char *)ft_memmove(dest, src, sizeof(src)));
 }*/

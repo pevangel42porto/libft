@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/09 15:07:00 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/09 15:28:20 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n)
+	j = 0;
+	while (str[i] != '\0' && i <= len)
 	{
-		((unsigned char *)s)[i] = c;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return ((char *)str + i);
 		i++;
+		j = 0;
 	}
-	return (s);
+	return (0);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	const char original[] = "Bem vindo ao mundo 42!";
+	const char search[] = "mun";
 
-	printf("%p", ft_memset(example, 'A', 10));
+	printf("%s", ft_strnstr(original, search, 20));
 }*/

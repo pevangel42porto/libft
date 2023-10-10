@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/10 16:53:26 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/10 16:55:13 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = c;
-		i++;
-	}
-	return (s);
 }
-/*
-int	main()
-{
-	char	example[] = "Bem vindo ao mundo 42!";
-
-	printf("%p", ft_memset(example, 'A', 10));
-}*/

@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/10 16:38:33 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/10 16:52:38 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
-	while (i < n)
+	j = 0;
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		((unsigned char *)s)[i] = c;
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	return (s);
+	str[j] = '\0';
+	return (str);
 }
-/*
+
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	char example[] = "Ola bem vindo ao mundo 42!";
 
-	printf("%p", ft_memset(example, 'A', 10));
-}*/
+	printf("%s", ft_substr(example, 4, 9));
+}

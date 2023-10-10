@@ -22,10 +22,10 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
-
+/*
 int	main()
 {
 	char	example[] = "Bem vindo ao mundo 42";
 
 	printf("%d", ft_strlen(example));
-}
+}*/

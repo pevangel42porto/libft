@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/09 14:33:52 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/09 14:49:51 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	i = 0;
-	while (i < n)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (str1 == str2 || n == 0)
+		return (0);
+	while (n--)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
 	}
-	return (s);
+	return (0);
 }
 /*
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	const char example1[] = "ola bem vindo ao mundo 42";
+	const char example2[]= "Ola bem vindo";
 
-	printf("%p", ft_memset(example, 'A', 10));
+	printf("%d", ft_memcmp(example1, example2, 5));
 }*/

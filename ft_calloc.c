@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:00 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/09 15:47:42 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/10 16:28:09 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
+#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
+	void	*ptr;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = c;
-		i++;
-	}
-	return (s);
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (ptr);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }
-/*
-int	main()
-{
-	char	example[] = "Bem vindo ao mundo 42!";
-
-	printf("%p", ft_memset(example, 'A', 10));
-}*/
