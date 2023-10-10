@@ -3,30 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:40:42 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/10 17:46:51 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:31:56 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBF_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
+	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
-typedef	struct	s_split_next
-{
-	size_t	start;
-	size_t	length;
-}
 
 int				ft_atoi(const char *str);
 
@@ -116,4 +111,3 @@ void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 #endif
-
