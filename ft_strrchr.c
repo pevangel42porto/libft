@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:48:27 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/09 13:55:49 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:35:43 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*str;
 
@@ -26,6 +25,8 @@ char	*strrchr(const char *s, int c)
 	return (str);
 }
 /*
+#include <stdio.h>
+
 int	main()
 {
 	const char example[] = "Bem vindo aom mundo 42!";

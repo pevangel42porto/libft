@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/11 11:24:50 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/13 09:22:20 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/13 10:23:31 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	**ft_split(char const *s, char c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	while (*s)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		while (*s != c)
+			*s++;
+		i
 	}
-	return (s);
 }
-/*
+
+#include <stdio.h>
+
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	char const example[] = "Ola, bem vindo, ao mundo 42!";
+	char	split[] = ",";
 
-	printf("%p", ft_memset(example, 'A', 10));
-}*/
+	printf("%s", ft_split(example, split);
+}

@@ -6,11 +6,11 @@
 /*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:56:10 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/06 15:15:13 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/11 09:21:39 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

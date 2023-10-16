@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:54:13 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/11 11:24:50 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/13 12:20:41 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/16 12:02:55 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void    ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		if (n < 0)
+		{
+			ft_putchar_fd('-', 1);
+			n = n * (-1);
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			n = n % 10;
+		}
+		ft_putchar_fd(n + '0', fd);
 	}
-	return (s);
 }
-/*
+
 int	main()
 {
-	char	example[] = "Bem vindo ao mundo 42!";
+	int	number = 2145450;
 
-	printf("%p", ft_memset(example, 'A', 10));
-}*/
+	ft_putnbr_fd(number, 1);
+}
