@@ -12,17 +12,50 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static	void	allocate(char **tab, char const *s, char sep)
 {
-	int	i;
+	char	**tab1;
+	char const	temp;
+ 
+	temp = s;
+	tab1 = tab;
+	while (*temp)
+	{
+		while (*s == sep)
+			s++,
+		temp = s;
+		while (*temp && temp != sep)
+			temp++;
+		if (*temp == sep || temp > s)
+		{
+			*tab1 = ft_substr(s, 0, temp -s);
+			s = temp;
+			tab1++;
+		}
+	}
+	*tab1 = NULL;
+}
 
-	i = 0;
+stastic	void	count_words(char const *s, char sep)
+{
+	int	count_words;
+
+	count_words = 0;
 	while (*s)
 	{
-		while (*s != c)
-			*s++;
-		i
+		while (*s == sep)
+			s++,
+		if (*s)
+			count_words++;
+		while (*s && *s != sep)
+			s++;
 	}
+	return (count_words);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	
 }
 
 #include <stdio.h>
