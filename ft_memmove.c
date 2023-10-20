@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:24:18 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/11 09:21:39 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:24:38 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*p_dest;
-	const unsigned char	*p_src;
+	size_t	i;
 
-	p_dest = dest;
-	p_src = src;
-	if (p_dest > p_src && p_dest < p_src + n)
-	{
-		while (n--)
-			*p_dest-- = *p_src--;
-	}
-	else
-		while (n--)
-			*p_dest++ = *p_src++;
+	i = 0;
+	if (src > dest)
+		while (i++ < n)
+			((char *)dest)[i - 1] = ((char *)src)[i - 1];
+	if (src < dest)
+		ft_memcpy(dest, src, n);
 	return (dest);
 }
 /*

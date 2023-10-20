@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:28:44 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/11 09:21:39 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:21:12 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,27 @@
 int	ft_atoi(const char *str)
 {
 	int	i;
-	int	signal;
 	int	nbr;
+	int	signal;
 
 	i = 0;
-	signal = 0;
 	nbr = 0;
+	signal = 1;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
-			signal++;
-		i++;
-	}
+			if (str[i] == '-')
+				signal *= -1;
+			i++;
+	}	
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nbr = nbr * 10;
 		nbr = nbr + str[i] - '0';
 		i++;
 	}
-	if (signal % 2 == 0)
-		return (nbr);
-	else 
-		return (-nbr);
+	return (signal * nbr);
 }
 /*
 int	main ()

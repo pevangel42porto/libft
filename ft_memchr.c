@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:12:05 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/12 15:35:15 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:35:18 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -18,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	while (n--)
 	{
-		if (*str == c)
+		if (*str == (unsigned char)c)
 			return (str);
 		str++;
 	}

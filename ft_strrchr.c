@@ -3,34 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:48:27 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/12 15:35:43 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:24:30 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
+	int	i;
 
-	str = (char *)s + ft_strlen(s);
-	while (*str != c)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if (*str == '\0')
-			return (NULL);
-		str--;
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	return (str);
+	return (NULL);
 }
-/*
+/* 
 #include <stdio.h>
 
 int	main()
 {
-	const char example[] = "Bem vindo aom mundo 42!";
-	int c = 'm';
+	const char example[] = "teste";
+	int c = 'e';
 
 	printf("%s", ft_strrchr(example, c));
-}*/
+}
+ */

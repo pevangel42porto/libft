@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 16:29:15 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:33:21 by pevangel         ###   ########.fr       */
+/*   Created: 2023/10/19 12:24:03 by pevangel          #+#    #+#             */
+/*   Updated: 2023/10/19 14:36:21 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+int	ft_lstsize(t_list *lst)
 {
-	char	*temp;
-	int		i;
+	int	i;
 
-	temp = (char *)malloc(ft_strlen(s) + 1 * sizeof(char));
 	i = 0;
-	if (!temp)
-		return(0);
-	while (s[i] != '\0')
+	while (lst)
 	{
-		temp[i] = s[i];
+		lst = lst->next;
 		i++;
 	}
-	temp[i] = '\0';
-	return (temp);
+	return (i);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+    t_list *node1 = malloc(sizeof(t_list));
+    t_list *node2 = malloc(sizeof(t_list));
+    t_list *node3 = malloc(sizeof(t_list));
+    int count;
+
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = NULL;
+
+    count = ft_lstsize(node1);
+    printf("%d", count);
+} */

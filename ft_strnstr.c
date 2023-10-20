@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:07:00 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/12 15:29:52 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:57:22 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
@@ -18,22 +19,29 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-	while (str[i] != '\0' && i <= len)
+	if (*to_find == '\0')
+		return ((char *)&str[i]);
+	while (str[i] != '\0' && i < len)
 	{
-		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+		while (str[i + j] == to_find[j] && str[i + j] != '\0' && i + j < len)
+		{
 			j++;
 		if (to_find[j] == '\0')
-			return ((char *)str + i);
+			return ((char *)&str[i]);
+		}
 		i++;
 		j = 0;
 	}
 	return (0);
 }
-/*
+/* 
+#include <stdio.h>
+
 int	main()
 {
-	const char original[] = "Bem vindo ao mundo 42!";
-	const char search[] = "mun";
+	const char original[] = "lorem ipsum dolor sit amet";
+	const char search[] = "dolor";
 
 	printf("%s", ft_strnstr(original, search, 20));
-}*/
+}
+ */

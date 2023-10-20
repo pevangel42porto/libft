@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:40:42 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/13 12:25:48 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:40:57 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
-
-typedef struct s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}				t_list;
 
 int				ft_atoi(const char *str);
 
@@ -68,6 +61,8 @@ char			*ft_strchr(const char *s, int c);
 
 char			*ft_strdup(const char *s);
 
+void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+
 char			*ft_strjoin(char const *s1, char const *s2);
 
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
@@ -92,6 +87,13 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 
 int				ft_toupper(int c);
+
+typedef struct s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 t_list			*ft_lstnew(void *content);
 
