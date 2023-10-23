@@ -6,16 +6,16 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:08:20 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/23 17:01:37 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:17:50 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst == NULL || new == NULL)
-		return;
+		return ;
 	new->next = *lst;
 	*lst = new;
 }
