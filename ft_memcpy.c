@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:12:35 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 11:24:04 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:44:17 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	if (!src && !dest)
-		return(0);
+		return (0);
 	while (n)
 	{
 		n--;

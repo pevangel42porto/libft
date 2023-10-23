@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:54:55 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/19 14:39:40 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:36:04 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*temp;
 
 	if (lst == NULL || del == NULL)
-		return (NULL);
+		return ;
 	head = *lst;
 	while (head)
 	{

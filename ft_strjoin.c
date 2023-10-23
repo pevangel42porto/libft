@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:55:25 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:34:03 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:39:24 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	int		len_s1;
-	int		len_s2;
 	char	*str;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	str = (char *)malloc(sizeof(*s1) * (len_s1 + len_s2 + 1));
+	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (0);
 	if (s1 && s2)
@@ -41,11 +37,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (NULL);
 }
-/*
+/* 
+#include <stdio.h>
 int	main()
 {
 	char s1[] = "bem vindo";
-	char s2[] = "ao mundo 42!";
+	char s2[] = " ao mundo 42!";
 
 	printf("%s", ft_strjoin(s1, s2));
-}*/
+}
+ */

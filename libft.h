@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:40:42 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:40:57 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:20:54 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ int				ft_toupper(int c);
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
 

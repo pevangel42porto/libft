@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:29:15 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:33:21 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:43:47 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	temp = (char *)malloc(ft_strlen(s) + 1 * sizeof(char));
 	i = 0;
 	if (!temp)
-		return(0);
+		return (0);
 	while (s[i] != '\0')
 	{
 		temp[i] = s[i];

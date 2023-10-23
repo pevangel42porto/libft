@@ -6,7 +6,7 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:07:00 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 12:57:22 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:41:57 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		while (str[i + j] == to_find[j] && str[i + j] != '\0' && i + j < len)
 		{
 			j++;
-		if (to_find[j] == '\0')
-			return ((char *)&str[i]);
+			if (to_find[j] == '\0')
+				return ((char *)&str[i]);
 		}
 		i++;
 		j = 0;

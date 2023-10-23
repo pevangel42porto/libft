@@ -6,12 +6,13 @@
 /*   By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 09:22:20 by pevangel          #+#    #+#             */
-/*   Updated: 2023/10/20 13:41:04 by pevangel         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:08:38 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static	void	ft_cleen(char **clean, int count_words)
+
+static	void	ft_clean(char **clean, int count_words)
 {
 	int	i;
 
@@ -19,12 +20,12 @@ static	void	ft_cleen(char **clean, int count_words)
 	while (i < count_words)
 	{
 		free(clean[i]);
-		i++;	
+		i++;
 	}
 	free(clean);
-		
 }
-static	void	ft_allocate(char **tab, char const *s, char sep)
+
+static void	ft_allocate(char **tab, char const *s, char sep)
 {
 	char		**tab1;
 	char const	*temp;
@@ -69,34 +70,44 @@ char	**ft_split(char const *s, char c)
 {
 	char	**new;
 	int		size;
-	int	i;
+	int		i;
 
 	size = ft_count_words(s, c);
 	new = malloc(sizeof(char *) * (size + 1));
 	if (!new)
-		return (NULL);
+		return (0);
 	ft_allocate(new, s, c);
 	i = 0;
 	while (i < ft_count_words(s, c))
 	{
 		if (new[i] == NULL)
 		{
-			ft_cleen(new, ft_count_words(s,c));
+			ft_clean(new, ft_count_words(s, c));
 			return (0);
 		}
 		i++;
 	}
 	return (new);
-	
 }
 /* 
 #include <stdio.h>
 
-int	main()
+int main()
 {
-	char const example[] = "Ola, bem vindo, ao mundo 42!";
-	char	split[] = ",";
+    char *example = "Ola, bem vindo, ao mundo 42!";
+    char split = ' ';
 
-	printf("%s", ft_split(example, split);
+    char **result = ft_split(example, split);
+    if (result != NULL)
+    {
+        int i = 0;
+        while (result[i] != NULL)
+        {
+            printf("%s\n", result[i]);
+            i++;
+        }
+        ft_clean(result, ft_count_words(example, split));
+    }
 }
+
  */
